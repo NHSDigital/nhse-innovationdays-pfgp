@@ -20,5 +20,14 @@ jobs:
     needs: [deploy]
     if: ${{ always() && needs.deploy.result == 'failure' }}
     steps:
-      - run: echo -e "\033[130;1;4mThings have gone wrong\033[0m"
-      - run: npm run failure-guidance
+      - uses: actions/checkout@v4
+      - name Use Node.js 18.x
+        uses: actions/setup-node:v3
+	with:
+	  node-version: 18.x
+      - name: Install dependencies
+        run: npm ci
+      - name: Notify user of error
+        run: echo -e "\033[130;1;4mThings have gone wrong\033[0m"
+      - name: Run failure guidance
+        run: npm run failure-guidance
