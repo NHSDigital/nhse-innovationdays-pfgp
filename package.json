@@ -1,0 +1,27 @@
+{
+  "name": "pfgp",
+  "version": "1.0.0",
+  "description": "Pipeline Failure Guidance Plugin",
+  "main": "src/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjss/pfgp.git"
+  },
+  "authors": [
+    "Rich McIntyre",
+    "Mike Winter",
+    "David Gould"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bjss/pfgp/issues"
+  },
+  "homepage": "https://github.com/bjss/pfgp#readme"
+}
