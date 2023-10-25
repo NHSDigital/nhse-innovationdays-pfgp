@@ -14,3 +14,11 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm test
+
+  catch:
+    runs-on: ubuntu-22.04
+    needs: [deploy]
+    if: ${{ always() && needs.deploy.result == 'failure' }}
+    steps:
+      - echo -e "\033[130;1;4mThings have gone wrong\033[0m"
+      - npm run failure-guidance
