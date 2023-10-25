@@ -20,5 +20,5 @@ jobs:
     needs: [deploy]
     if: ${{ always() && needs.deploy.result == 'failure' }}
     steps:
-      - echo -e "\033[130;1;4mThings have gone wrong\033[0m"
-      - npm run failure-guidance
+      - run: echo -e "\033[130;1;4mThings have gone wrong\033[0m"
+      - run: npm run failure-guidance
