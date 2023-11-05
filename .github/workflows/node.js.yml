@@ -4,6 +4,8 @@ on: push
 jobs:
   deploy:
     runs-on: ubuntu-22.04
+    outputs:
+      test_results: ${{ steps.tests.outputs.TEST_RESULT }}
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js 20.x
@@ -13,6 +15,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run tests
+        id: tests
         run: >-
           echo "::set-output name=TEST_RESULT::$(
             npm test
@@ -31,6 +34,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Notify user of error
-        run: echo -e "\033[130;1;4mThings have gone wrong\033[0m: ${{ steps.deploy.outputs.TEST_RESULT }}"
+        run: echo -e "\033[130;1;4mThings have gone wrong\033[0m: ${{ needs.deploy.outputs.test_results }}"
       - name: Run failure guidance
         run: npm run failure-guidance
