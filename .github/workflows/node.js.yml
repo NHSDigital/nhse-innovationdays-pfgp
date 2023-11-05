@@ -34,6 +34,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Notify user of error
-        run: echo -e "\033[130;1;4mThings have gone wrong\033[0m: ${{ needs.deploy.outputs.test_results }}"
+        run: echo -e "\033[130;1;4mThings have gone wrong\033[0m ${{ needs.deploy.outputs.test_results }}"
       - name: Run failure guidance
         run: npm run failure-guidance
