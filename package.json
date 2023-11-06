@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bjss/pfgp.git"
+    "url": "git+https://github.com/NHSDigital/nhse-innovation-pfgp.git"
   },
   "authors": [
     "Rich McIntyre",
@@ -22,7 +22,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bjss/pfgp/issues"
+    "url": "https://github.com/NHSDigital/nhse-innovation-pfgp/issues"
   },
-  "homepage": "https://github.com/bjss/pfgp#readme"
+  "homepage": "https://github.com/NHSDigital/nhse-innovation-pfgp#readme"
 }
